@@ -1,0 +1,90 @@
+//= template/head.html
+<title>Register Page</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <main class="main">
+            <section class="section">
+                <div class="graphic-img">
+                    <img src="img/graphic.svg" alt="graphic image">
+                </div>
+                <div class="wrap">
+                    <div class="wrap-container">
+                        <div class="form-box">
+                            <h1 class="h2">
+                                Register new account
+                            </h1>
+                            <p>
+                                Access to the most powerfull tool in the entire design and web industry.
+                            </p>
+                            <form action="#" class="form form_register">
+                                <div class="form__group">
+                                    <input type="text" name="name" id="name" placeholder="Full Name" required>
+                                </div>
+                                <div class="form__group">
+                                    <input type="email" name="email" id="email" placeholder="E-mail Address">
+                                </div>
+                                <div class="form__group form__group_password">
+                                    <input type="password" name="password" id="password" placeholder="Password">
+                                    <span class="ico-show">
+                                        <svg width="18" height="18" class="hide">
+                                            <use xlink:href="img/sprites.svg#password-hide" fill="#a5a9ac"></use>
+                                        </svg>
+                                        <svg width="18" height="18" class="show">
+                                            <use xlink:href="img/sprites.svg#password-show" fill="#a5a9ac"></use>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="form__group">
+                                    <input placeholder="Date of birth" class="textbox-n" type="text" id="date"
+                                        name="date">
+                                </div>
+                                <div class="form__group">
+                                    <button>Register</button>
+                                </div>
+                            </form>
+                            <div class="other-links">
+                                <span class="other-links__text">
+                                    Or register with
+                                </span>
+                                <div class="other-links__holder">
+                                    <a href="#!" target="_blank">
+                                        <span class="ico ico_facebook">
+                                            <svg width="10" height="10">
+                                                <use xlink:href="img/sprites.svg#facebook" fill="#FFFFFF"></use>
+                                            </svg>
+                                        </span>
+                                        Facebook
+                                    </a>
+                                    <a href="#!" target="_blank">
+                                        <span class="ico ico_google">
+                                            <svg width="10" height="10">
+                                                <use xlink:href="img/sprites.svg#google" fill="#FFFFFF"></use>
+                                            </svg>
+                                        </span>
+                                        Google
+                                    </a>
+                                    <a href="#!" target="_blank">
+                                        <span class="ico ico_linkedin">
+                                            <svg width="12" height="12">
+                                                <use xlink:href="img/sprites.svg#linkedin" fill="#FFFFFF"></use>
+                                            </svg>
+                                        </span>
+                                        Linkedin
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="login.html" class="page-link">
+                                Login to account
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    //= template/includes.html
+</body>
+
+</html>
