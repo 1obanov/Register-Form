@@ -1,5 +1,5 @@
 # Register Form
->The simple register form project using plain JavaScript.
+>The simple register/login/reset form project using plain JavaScript.
 
 ## Installation
 ```

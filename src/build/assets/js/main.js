@@ -1,11 +1,10 @@
-document.addEventListener('DOMContentLoaded', function (event) {
+document.addEventListener('DOMContentLoaded', function () {
     isElementExist('.form_register', initValidationRegister);
     isElementExist('.form_login', initValidationLogin);
     isElementExist('.form_reset', initValidationReset);
     isElementExist('#date', initDatepicker);
     isElementExist('#password', initShowPassword);
 });
-
 
 // Helper if element exist then call function
 function isElementExist(_el, _cb) {
@@ -20,14 +19,37 @@ function isElementExist(_el, _cb) {
     }
 }
 
-let options = {
+let optionColor = {
     color: '#dd4b39'
+}
+
+let optionEmail = [{
+        rule: 'required',
+        errorMessage: 'Please enter the email'
+    },
+    {
+        rule: 'email',
+        errorMessage: 'Please enter the correct email address'
+    }
+]
+
+let optionPassword = [{
+    rule: 'required',
+    errorMessage: 'Please enter the password',
+}]
+
+let inputs = document.querySelectorAll('.form input');
+
+function clearInputsValue() {
+    inputs.forEach((element) => {
+        element.value = '';
+    })
 }
 
 function initValidationRegister() {
     const validation = new JustValidate('.form_register', {
         errorFieldCssClass: 'is-invalid',
-        errorLabelStyle: options
+        errorLabelStyle: optionColor
     });
 
     validation
@@ -35,64 +57,39 @@ function initValidationRegister() {
             rule: 'required',
             errorMessage: 'Please enter the name',
         }, ])
-        .addField('#email', [{
-                rule: 'required',
-                errorMessage: 'Please enter the email',
-            },
-            {
-                rule: 'email',
-                errorMessage: 'Please enter the correct email address',
-            },
-        ])
-        .addField('#password', [{
-            rule: 'required',
-            errorMessage: 'Please enter the password',
-        }, ])
+        .addField('#email', optionEmail)
+        .addField('#password', optionPassword)
+        .onSuccess(() => {
+            clearInputsValue();
+        });
 }
 
 function initValidationLogin() {
     const validation = new JustValidate('.form_login', {
         errorFieldCssClass: 'is-invalid',
-        errorLabelStyle: options
+        errorLabelStyle: optionColor
     });
 
     validation
-        .addField('#email', [{
-                rule: 'required',
-                errorMessage: 'Please enter the email',
-            },
-            {
-                rule: 'email',
-                errorMessage: 'Please enter the correct email address',
-            },
-        ])
-        .addField('#password', [{
-            rule: 'required',
-            errorMessage: 'Please enter the password',
-        }, ])
+        .addField('#email', optionEmail)
+        .addField('#password', optionPassword)
+        .onSuccess(() => {
+            clearInputsValue();
+        });
 }
 
 function initValidationReset() {
     const validation = new JustValidate('.form_reset', {
         errorFieldCssClass: 'is-invalid',
-        errorLabelStyle: options
+        errorLabelStyle: optionColor
     });
 
     validation
-        .addField('#email', [{
-                rule: 'required',
-                errorMessage: 'Please enter the email',
-            },
-            {
-                rule: 'email',
-                errorMessage: 'Please enter the correct email address',
-            },
-        ])
+        .addField('#email', optionEmail)
         .onSuccess(() => {
             document.querySelector('.form-inner').classList.add('flip');
         });
 }
-
 
 function initDatepicker() {
     const date = document.querySelector('input[name="date"]');
